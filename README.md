@@ -18,11 +18,12 @@
   - [Tipos de datos en JS](#tipos-de-datos-en-js)
   - [Utilización de prompt](#utilización-de-prompt)
     - [Utilización de confirm prompt](#utilización-de-confirm-prompt)
-  - [Uso de IF](#uso-de-if)
-  - [Uso de Switch](#uso-de-switch)
-  - [Uso de While](#uso-de-while)
-  - [Uso de For](#uso-de-for)
-  - [Uso de For In y For Of](#uso-de-for-in-y-for-of)
+  - [Estructuras de control](#estructuras-de-control)
+    - [Uso de IF](#uso-de-if)
+    - [Uso de Switch](#uso-de-switch)
+    - [Uso de While](#uso-de-while)
+    - [Uso de For](#uso-de-for)
+    - [Uso de For In y For Of](#uso-de-for-in-y-for-of)
       - [Citas Coloreadas](#citas-coloreadas)
 
 
@@ -131,7 +132,12 @@ if (pregunta == true) {
 }
 ``` 
 
-## Uso de IF
+## Estructuras de control
+
+Estructuras de control en JavaScript son mecanismos que permiten controlar el flujo de ejecución del programa, incluyendo la toma de decisiones y la repetición de bloques de código.<br>
+A continuación, veremos las más usadas e importantes:
+
+### Uso de IF
 
 Igual que en el anterior ejemplo, con la diferencia de que el usuario introducirá el dato.
 
@@ -149,7 +155,7 @@ if(edad <18) {
 > [!NOTE]  
 >Todos los datos que pasan a traves del prompt son String por lo que tenemos que tiparlo con **parseInt**
 
-## Uso de Switch
+### Uso de Switch
 En este ejemplo podemos ver como al usuario le permitimos introducir un valor (suponemos que sabe que solo se puede del 1 al 10) nuestra funcion switch revisara los diferentes casos para sacar un alert
 ```js
 let nota = parseInt(prompt("Dane nota"))
@@ -175,7 +181,7 @@ switch (nota) {
 }
 ```
 
-## Uso de While
+### Uso de While
 
 El bucle while se utiliza para ejecutar un bloque de código repetidamente mientras una condición especificada sea evaluada como verdadera. La estructura general de un bucle while es la siguiente:
 
@@ -190,7 +196,7 @@ while (i <= 5) {
 Este bucle se ejecutará mientras i sea menor o igual a 5. En cada iteración, se imprimirá el valor de i y luego se incrementará en 1. Cuando i sea 6, la condición i <= 5 será falsa y el bucle se detendrá.
 
 
-## Uso de For
+### Uso de For
 
 El bucle for se utiliza para ejecutar un bloque de código un número específico de veces. Es especialmente útil cuando sabes cuántas veces necesitas que se ejecute el bucle. La estructura general de un bucle for es la siguiente:
 
@@ -201,7 +207,7 @@ for (let i = 1; i <= 5; i++) {
 ```
 Este bucle comienza con i inicializado en 1, se ejecuta mientras i sea menor o igual a 5, e incrementa i en 1 en cada iteración. Se imprimirán los números del 1 al 5 en la consola. Una vez que i llega a 6, la condición i <= 5 se vuelve falsa y el bucle termina.
 
-## Uso de For In y For Of
+### Uso de For In y For Of
 **for...in** itera sobre las propiedades enumerables de un objeto, incluidos los índices en arrays, mientras que **for...of** itera sobre los valores de un objeto iterable, manteniendo el orden y omitiendo las propiedades del prototipo.
 
 ```js
