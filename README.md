@@ -22,6 +22,7 @@
   - [Uso de Switch](#uso-de-switch)
   - [Uso de While](#uso-de-while)
   - [Uso de For](#uso-de-for)
+  - [Uso de For In y For Of](#uso-de-for-in-y-for-of)
       - [Citas Coloreadas](#citas-coloreadas)
 
 
@@ -181,8 +182,8 @@ El bucle while se utiliza para ejecutar un bloque de código repetidamente mient
 ```js
 let i = 1;
 while (i <= 5) {
-    console.log(i);
-    i++;
+    console.log(i)
+    i++
 }
 ```
 
@@ -199,6 +200,30 @@ for (let i = 1; i <= 5; i++) {
 }
 ```
 Este bucle comienza con i inicializado en 1, se ejecuta mientras i sea menor o igual a 5, e incrementa i en 1 en cada iteración. Se imprimirán los números del 1 al 5 en la consola. Una vez que i llega a 6, la condición i <= 5 se vuelve falsa y el bucle termina.
+
+## Uso de For In y For Of
+**for...in** itera sobre las propiedades enumerables de un objeto, incluidos los índices en arrays, mientras que **for...of** itera sobre los valores de un objeto iterable, manteniendo el orden y omitiendo las propiedades del prototipo.
+
+```js
+let vehiculos = ["Moto", "Coche", "Camion",];
+    let mensaje = "";
+    for (let indice in frutas) {
+        mensaje += vehiculos[indice] + "\n";
+    }
+    alert(mensaje);
+```
+
+```js
+let vehiculos = ["Moto", "Coche", "Camion",]
+    mensaje = "";
+    for (let vehiculo of vehiculos) {
+        mensaje += vehiculo + "\n"
+    }
+    alert(mensaje)
+```
+Estos codigos nos mostraran un alert con el array que hemos creado
+
+
 #### Citas Coloreadas
 
 [Tabla de contenidos](#tabla-de-contenidos)
