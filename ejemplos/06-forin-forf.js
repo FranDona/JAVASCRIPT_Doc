@@ -25,3 +25,9 @@ let vehiculos = ["Moto", "Coche", "Camion",]
 // El bucle for...of itera directamente sobre los elementos del array frutas. En cada iteración, fruta toma el valor de un elemento del array.
 // El valor de cada elemento se agrega a la variable mensaje, seguido de un salto de línea ("\n").
 // Finalmente, se muestra el contenido de mensaje en una ventana de alerta.
+
+/*
+    Si queremos vincular este archivo
+    utilizaremos: 
+    <script src="05-while-for.js"></script>
+*/
