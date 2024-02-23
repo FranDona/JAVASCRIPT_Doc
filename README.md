@@ -20,6 +20,8 @@
     - [Utilización de confirm prompt](#utilización-de-confirm-prompt)
   - [Uso de IF](#uso-de-if)
   - [Uso de Switch](#uso-de-switch)
+  - [Uso de While](#uso-de-while)
+  - [Uso de For](#uso-de-for)
       - [Citas Coloreadas](#citas-coloreadas)
 
 
@@ -172,7 +174,33 @@ switch (nota) {
 }
 ```
 
+## Uso de While
+
+El bucle while se utiliza para ejecutar un bloque de código repetidamente mientras una condición especificada sea evaluada como verdadera. La estructura general de un bucle while es la siguiente:
+
+```js
+let i = 1;
+while (i <= 5) {
+    console.log(i);
+    i++;
+}
+```
+
+Este bucle se ejecutará mientras i sea menor o igual a 5. En cada iteración, se imprimirá el valor de i y luego se incrementará en 1. Cuando i sea 6, la condición i <= 5 será falsa y el bucle se detendrá.
+
+
+## Uso de For
+
+El bucle for se utiliza para ejecutar un bloque de código un número específico de veces. Es especialmente útil cuando sabes cuántas veces necesitas que se ejecute el bucle. La estructura general de un bucle for es la siguiente:
+
+```js
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+```
+Este bucle comienza con i inicializado en 1, se ejecuta mientras i sea menor o igual a 5, e incrementa i en 1 en cada iteración. Se imprimirán los números del 1 al 5 en la consola. Una vez que i llega a 6, la condición i <= 5 se vuelve falsa y el bucle termina.
 #### Citas Coloreadas
+
 [Tabla de contenidos](#tabla-de-contenidos)
 
 > [!NOTE]  
