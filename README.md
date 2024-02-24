@@ -24,6 +24,9 @@
     - [Uso de While](#uso-de-while)
     - [Uso de For](#uso-de-for)
     - [Uso de For In y For Of](#uso-de-for-in-y-for-of)
+    - [Uso de forEach](#uso-de-foreach)
+  - [Funciones propias](#funciones-propias)
+  - [Programación Orientada a objetos](#programación-orientada-a-objetos)
       - [Citas Coloreadas](#citas-coloreadas)
 
 
@@ -228,6 +231,31 @@ let vehiculos = ["Moto", "Coche", "Camion",]
     alert(mensaje)
 ```
 Estos codigos nos mostraran un alert con el array que hemos creado
+
+### Uso de forEach
+
+ forEach se utiliza para ejecutar una función para cada elemento de un array, lo que permite realizar operaciones en cada elemento de manera sencilla y concisa.
+
+```js
+let numeros = [1, 2, 3, 4, 5]
+
+numeros.forEach(numero => {
+    alert(numero * 2)
+})
+```
+ Esto mostrará una ventana en el navegador con el resultado de multiplicar cada número por 2
+
+
+## Funciones propias
+
+ Las "funciones propias" se refieren a las funciones definidas por el usuario, es decir, las funciones que tú mismo has creado para realizar tareas específicas.
+ Veremos algunas a continuación:
+
+ 
+
+## Programación Orientada a objetos
+
+
 
 
 #### Citas Coloreadas
