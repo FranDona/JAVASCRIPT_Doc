@@ -26,7 +26,10 @@
     - [Uso de For In y For Of](#uso-de-for-in-y-for-of)
     - [Uso de forEach](#uso-de-foreach)
   - [Funciones propias](#funciones-propias)
-  - [Programación Orientada a objetos](#programación-orientada-a-objetos)
+  - [Programación Orientada a objetos (POO)](#programación-orientada-a-objetos-poo)
+    - [Clases (POO)](#clases-poo)
+    - [Herencias (POO)](#herencias-poo)
+    - [Encapsulamiento (POO)](#encapsulamiento-poo)
       - [Citas Coloreadas](#citas-coloreadas)
 
 
@@ -251,11 +254,189 @@ numeros.forEach(numero => {
  Las "funciones propias" se refieren a las funciones definidas por el usuario, es decir, las funciones que tú mismo has creado para realizar tareas específicas.
  Veremos algunas a continuación:
 
+- Funcion para sumar
+```js 
+function sumar() {
+    let num1 = parseInt(prompt("Dame nº1"));
+    let num2 = parseInt(prompt("Dame nº2"));
+    let resultado = num1 + num2;
+    alert(resultado);
+}
+```
+
+- Funcion para restar
+```js 
+function restar() {
+    let num1 = parseInt(prompt("Dame nº1"));
+    let num2 = parseInt(prompt("Dame nº2"));
+    let resultado = num1 - num2;
+    return resultado; 
+}
+```
+
+- Funcion para multiplicar
+```js 
+function multiplicar(n1, n2) { 
+    let resultado = n1 * n2; 
+    alert(resultado);
+}
+```
  
 
-## Programación Orientada a objetos
+## Programación Orientada a objetos (POO)
+La programación orientada a objetos en JavaScript se basa en la creación de objetos que combinan datos y funciones, encapsulados en clases, lo que permite una organización estructurada y reutilizable del código.
+
+### Clases (POO)
+
+```js
+class Coche {
+    modelo = ""
+    potencia = 0
+    precio = 40000.00
 
 
+
+    constructor(modelo, potencia){
+        this.modelo = modelo
+        this.potencia = potencia
+    }
+
+
+    imprimir(){
+        return `Datos Coche:
+                Modelo: ${this.modelo}
+                Potencia: ${this.potencia}
+                Precio: ${this.precio}€`
+    }
+    
+}
+```
+
+ - Comenzamos creado la clase con **class** seguido de un nombre.<br>
+ - Dentro de las clase iniciamos las variables que queremos mosotrar de  nuestro objeto<br>
+ - Creamos el **constructor** con el cual instanciaremos las clases <br>
+ y por ultimo creamos una funcion para mostrar los datos con **return** y los acentos graves " ` "
+
+ - Si quisieramos imprimir los datos de la clase en pantalla seria muy sencillo:
+    ```js
+    let cocheFran = new Coche("Mercedes Benz Clase B", 350, 57000.00)
+    alert(cocheFran.imprimir())
+    ```
+
+> [!IMPORTANT]  
+> En caso de no indicar los valores en la instancia de la clase, esta recogerá los datos con los que inicializamos las variables al principio de la clase
+
+### Herencias (POO)
+
+La herencia en POO permite que una clase hija obtenga propiedades y métodos de una clase padre, lo que facilita la reutilización del código.
+
+Usaremos el ejemplo anterior para crear una clase Extendida
+
+```js
+class Coche {
+    constructor(modelo, potencia, precio = 40000.00) {
+        this.modelo = modelo;
+        this.potencia = potencia;
+        this.precio = precio;
+    }
+
+   
+    imprimir() {
+        return `Datos Coche:
+                Modelo: ${this.modelo}
+                Potencia: ${this.potencia}
+                Precio: ${this.precio}€`;
+    }
+}
+
+// Definición de la clase Hijo que hereda de Coche
+class CocheDeportivo extends Coche {
+    constructor(modelo, potencia, precio, velocidadMaxima) {
+        super(modelo, potencia, precio); // Llamada al constructor de la clase padre (Coche)
+        this.velocidadMaxima = velocidadMaxima;
+    }
+
+    // Método para imprimir los datos del coche deportivo
+    imprimir() {
+        return `Datos Coche Deportivo:
+                Modelo: ${this.modelo}
+                Potencia: ${this.potencia}
+                Precio: ${this.precio}€
+                Velocidad Máxima: ${this.velocidadMaxima} km/h`;
+    }
+}
+```
+
+- Usamos ```class clase_hija extends clase_padre {}``` para crear nuestra clase heredada
+- En el constructor hijo introduciremos las variables del padre y las nuevas que añadamos del hijo. **Además** volveremos a añadir las del padre dentro de un ```super(variables)``` solo las del padre
+- Crearemos un funciona para imprimir y añadiremos todo lo que queramos mostrar
+
+Para mostrar los datos por pantalla:
+
+```js
+//Clase PADRE
+let cocheFran = new Coche("Mercedes Benz Clase B", 100, 10000.00)
+//Clase Hija
+let cocheDeportivoFran = new CocheDeportivo("Ferrari", 700, 200000.00, 350);
+//Imprimimos las dos clases
+alert(cocheDeportivoFran.imprimir());
+alert(cocheFran.imprimir());
+```
+> [!TIP]
+> Si no queremos indicar los datos en la instancia de la clase podemos hacerlo directamente en el constructor:
+```js
+constructor(precio, velocidadMaxima = 350)
+```
+
+### Encapsulamiento (POO)
+El encapsulamiento en programación consiste en ocultar la implementación interna de un objeto y permitir el acceso controlado a sus datos y métodos. Esto ayuda a mejorar la seguridad y la organización del código.
+
+```js
+class Coche {
+    #modelo_coche = "" // Encapsulamiento: propiedades privadas
+    #potencia = 0 // Encapsulamiento: propiedades privadas
+
+    constructor(modelo, potencia) {
+        this.#modelo_coche = modelo
+        this.#potencia = potencia
+    }
+
+    imprimir() {
+        return `Datos Coche:
+                Modelo: ${this.#modelo_coche}
+                Potencia: ${this.#potencia}`
+    }
+
+    // Métodos para obtener y establecer el modelo (ejemplo de getters y setters)
+    get modelo_coche() {
+        return this.#modelo_coche
+    }
+
+    set modelo_coche(nuevoModelo) {
+        this.#modelo_coche = nuevoModelo
+    }
+}
+```
+- Añadimos a las variables de la clase una # para hacerlas privadas
+- Cambiamos todas las variables añadiéndole el # al resto del código
+- Creamos las funciones get y set
+
+Para mostrar los datos por pantalla:
+
+
+```js
+let cocheFran = new Coche("Mercedes Benz Clase B", 350)
+alert(cocheFran.imprimir())
+
+// Cambiar el modelo usando el setter
+let = nuevoModelo = prompt("Introduce el nuevo modelo:")
+cocheFran.modelo_coche = nuevoModelo 
+alert(cocheFran.imprimir())
+```
+- Mostramos la clase de manera normal
+- Para cambiar el modelo de la clase añadimos una variable que contenga un prompt donde el usuario podrá ingresar el modelo que prefiera
+- Añadimos la variable coche junto a la función modelo para cambiar el nuevo modelo
+- Por último volvemos a imprimir el coche para ver que efectivamente el modelo ha cambiado
 
 
 #### Citas Coloreadas
