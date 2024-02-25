@@ -1,6 +1,6 @@
 let num = 0 
 num = parseInt(window.prompt("Dame un número"))
-window.alert("Tu numero es:" + num)
+window.alert("Tu numero es: " + num)
 
 
 // let num = 0: Declara una variable llamada num e inicializa su valor en 0.

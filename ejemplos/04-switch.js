@@ -1,4 +1,4 @@
-let nota = parseInt(prompt("Dane nota"))
+let nota = parseInt(prompt("Dame nota"))
 switch (nota) {
     case 10:
     case 9:

@@ -2,27 +2,31 @@ let vehiculos = [
     {
         Coches: {
             Mercedes: "Clase A y Clase E",
-            BMW:"BMW X5 y BMW Serie 3",
+            BMW: "BMW X5 y BMW Serie 3",
         },
     },
     {
         Motos: {
             Honda: "CBR 1000 y CBR 600",
-            Kawasaki : "Ninja y KX 85",
+            Kawasaki: "Ninja y KX 85",
         },
     },
-]
+];
+
+let mensaje = ""; // Debes inicializar la variable mensaje antes de usarla.
 
 vehiculos.forEach((elemento) => {
     for (let concesionario in elemento) {
-        mensaje += "Vehiculos en venta " + concesionario + "\n"
+        mensaje += "Vehiculos en venta " + concesionario + "\n";
         for (let clave in elemento[concesionario]) {
-            mensaje += clave + " : " + elemento[concesionario][clave] + "\n"
+            mensaje += clave + " : " + elemento[concesionario][clave] + "\n";
         }
-        mensaje += "\n"
+        mensaje += "\n";
     }
 });
-alert(mensaje)
+
+alert(mensaje);
+
 
 
 //El array vehiculos contiene objetos anidados que representan diferentes tipos de vehículos (Coches y Motos) y sus modelos.
